@@ -1,0 +1,1 @@
+This is the C centric customer widget. Customer has three btns from where they create a new conversation for each btn now problem is this when user again click on the same btn it's creating the new branch always to tackle this we hide the widget when user click on widget close btn
