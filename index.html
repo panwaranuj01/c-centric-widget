@@ -6,15 +6,449 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            background-color: #000000ba;
+            height: 100vh;
+        }
 
+        div {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px
+        }
+
+        @media (max-width:400px) {
+            div {
+                width: 100%;
+            }
+        }
+
+        button {
+            font-size: 14px;
+            padding: 12px 16px;
+        }
+    </style>
+
+    <style>
+        .kommunicate-custom-iframe {
+            position: relative !important;
+            top: -20px !important;
+            bottom: none !important;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .fz__13qEx.fz__2MQ9Y.fz__3MmtP {
+            border-radius: 50%;
+            display: none !important;
+        }
+
+        iframe#kommunicate-widget-iframe {
+            /* bottom: -100% !important;
+        height: 500px !important; */
+            width: 600px !important;
+        }
+
+
+        /* iframe#kommunicate-widget-iframe.show-widget {
+        bottom: 18px !important;
+    } */
+
+
+        @media only screen and (max-width: 2560px) and (min-width: 2279px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 26% !important;
+            }
+        }
+
+        @media only screen and (max-width: 2278px) and (min-width: 1999px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 22% !important;
+            }
+        }
+
+        @media only screen and (max-width: 1999px) and (min-width: 1749px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 20% !important;
+            }
+        }
+
+        @media only screen and (max-width: 1748px) and (min-width: 1505px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 15% !important;
+            }
+        }
+
+
+        @media only screen and (max-width: 1504px) and (min-width: 1350px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 9% !important;
+            }
+        }
+
+        @media only screen and (max-width: 1349px) and (min-width: 1199px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 8% !important;
+            }
+        }
+
+        @media only screen and (max-width: 1198px) and (min-width: 1024px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                left: 1% !important;
+            }
+        }
+
+        @media only screen and (max-width: 1023px) and (min-width: 992px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                bottom: 18px !important;
+                left: 0% !important;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 991px) and (min-width: 632px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                bottom: 18px !important;
+                left: 8% !important;
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 631px) and (min-width: 594px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                bottom: 18px !important;
+                left: 0px !important;
+                margin: 0 auto;
+            }
+        }
+
+        @media only screen and (max-width: 593px) and (min-width: 518px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                bottom: 18px !important;
+                left: 0px !important;
+                width: 100% !important;
+            }
+        }
+
+        @media only screen and (max-width: 518px) and (min-width: 0px) {
+            iframe#kommunicate-widget-iframe.show-widget {
+                bottom: 18px !important;
+                left: 0px !important;
+                width: 100% !important;
+            }
+        }
+
+
+        .kommunicate-custom-iframe {
+            z-index: auto !important;
+        }
+
+        @media only screen and (max-width: 2560px) and (min-width: 1505px) {
+            .myht {
+                height: 480px !important;
+            }
+
+            .halfMyht {
+                height: 460px !important;
+            }
+
+            .myHtItr {
+                height: 495px !important;
+            }
+        }
+
+        @media only screen and (max-width: 1504px) and (min-width: 1350px) {
+            .myht {
+                height: 480px !important;
+            }
+
+            .halfMyht {
+                height: 460px !important;
+            }
+
+            .myHtItr {
+                height: 495px !important;
+            }
+        }
+
+        @media only screen and (max-width: 1351px) and (min-width: 1024px) {
+            .myht {
+                height: 440px !important;
+            }
+
+            .halfMyht {
+                height: 482px !important;
+            }
+
+            .myHtItr {
+                height: 495px !important;
+            }
+        }
+
+        @media only screen and (max-width: 1023px) and (min-width: 992px) {
+            .myht {
+                height: 440px !important;
+            }
+
+            .halfMyht {
+                height: 480px !important;
+            }
+
+            .myHtItr {
+                height: 490px !important;
+            }
+        }
+
+        @media only screen and (max-width: 991px) and (min-width: 768px) {
+            .myht {
+                height: 405px !important;
+            }
+
+            .halfMyht {
+                height: 480px !important;
+            }
+
+            .myHtItr {
+                height: 498px !important;
+            }
+        }
+
+        @media only screen and (max-width: 767px) and (min-width: 600px) {
+            .myht {
+                height: 400px !important;
+            }
+
+            .halfMyht {
+                height: 480px !important;
+            }
+
+            .myHtItr {
+                height: 490px !important;
+            }
+        }
+
+        @media only screen and (max-width: 600px) and (min-width: 451px) {
+            iframe#kommunicate-widget-iframe {
+                &.myht {
+                    height: 400px !important;
+                    bottom: 18px !important;
+                    top: 34% !important;
+                }
+            }
+
+            iframe#kommunicate-widget-iframe {
+                &.halfMyht {
+                    height: 480px !important;
+                    bottom: 18px !important;
+                    top: 20% !important;
+                }
+            }
+
+            iframe#kommunicate-widget-iframe {
+                &.myHtItr {
+                    height: 490px !important;
+                    bottom: 18px !important;
+                    top: 17% !important;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 450px) and (min-width: 343px) {
+            iframe#kommunicate-widget-iframe {
+                &.myht {
+                    height: 370px !important;
+                    bottom: 18px !important;
+                    top: 38% !important;
+                }
+            }
+
+            iframe#kommunicate-widget-iframe {
+                &.halfMyht {
+                    height: 490px !important;
+                    bottom: 18px !important;
+                    top: 19% !important;
+                }
+            }
+
+            iframe#kommunicate-widget-iframe {
+                &.myHtItr {
+                    height: 490px !important;
+                    bottom: 18px !important;
+                    top: 18% !important;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 342px) and (min-width: 0px) {
+            iframe#kommunicate-widget-iframe {
+                &.myht {
+                    height: 342px !important;
+                    bottom: 18px !important;
+                    top: 42% !important;
+                }
+            }
+
+            iframe#kommunicate-widget-iframe {
+                &.halfMyht {
+                    height: 490px !important;
+                    bottom: 18px !important;
+                    top: 19% !important;
+                }
+            }
+
+            iframe#kommunicate-widget-iframe {
+                &.myHtItr {
+                    height: 490px !important;
+                    bottom: 18px !important;
+                    top: 19% !important;
+                }
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <button data-deal="deal-1" onclick="btnClickHandler(event)">Chat here</button>
-    <button data-deal="deal-2" onclick="btnClickHandler(event)">Chat here</button>
-    <button data-deal="deal-3" onclick="btnClickHandler(event)">Chat here</button>
+    <div>
 
-    <script src="index.js"></script>
+        <button data-deal="deal-1" onclick="btnClickHandler(event)">Chat here</button>
+        <button data-deal="deal-2" onclick="btnClickHandler(event)">Chat here</button>
+        <button data-deal="deal-3" onclick="btnClickHandler(event)">Chat here</button>
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script>
 
+        function getConversationMetadata() {
+            const userAgent = navigator.userAgent;
+            let deviceName;
+            let browserName;
+            const browserLanguage = navigator.language;
+
+            // Check for common device identifiers
+            if (userAgent.match(/iPhone/i)) deviceName = "iPhone";
+            else if (userAgent.match(/iPad/i)) deviceName = "iPad";
+            else if (userAgent.match(/Android/i)) deviceName = "Android";
+            else if (userAgent.match(/Windows Phone/i)) deviceName = "Windows";
+            else
+                deviceName =
+                    navigator?.userAgentData?.platform || navigator.platform || "unknown";
+
+            // Check for common browser identifiers
+            if (userAgent.indexOf("Chrome") !== -1) browserName = "Chrome";
+            else if (userAgent.indexOf("Firefox") !== -1) browserName = "Firefox";
+            else if (userAgent.indexOf("Safari") !== -1) browserName = "Safari";
+            else if (userAgent.indexOf("Opera") !== -1 || userAgent.indexOf("OPR") !== -1)
+                browserName = "Opera";
+            else if (userAgent.indexOf("Edge") !== -1) browserName = "Edge";
+            else if (
+                userAgent.indexOf("MSIE") !== -1 ||
+                userAgent.indexOf("Trident/") !== -1
+            )
+                browserName = "Internet Explorer";
+            else browserName = "Unknown";
+
+            return {
+                deviceName,
+                browserName,
+                browserLanguage,
+            };
+        }
+
+        const { deviceName, browserName, browserLanguage } = getConversationMetadata();
+
+        function btnClickHandler(event) {
+            const dealName = event.target.getAttribute("data-deal");
+            window.conversationIds = window.conversationIds || {};
+            window.currentDealObj = window.currentDealObj || {};
+            window.currentDeal = dealName;
+
+            if (window.kommunicate) {
+                if (!window.currentDealObj[dealName]) {
+                    window.currentDealObj[dealName] = dealName;
+                    const conversationDetail = {
+                        assignee: "ed-gtalu",
+                        conversationMetadata: {
+                            Device: deviceName,
+                            Browser: browserName,
+                            "Browser Language": browserLanguage,
+                        },
+                    };
+                    var defaultSettings = {
+                        defaultBotIds: ["ed-gtalu"], // Optional. Replace <BOT_ID> with your bot ID which you can find in bot section of dashboard
+                        defaultAssignee: "ed-gtalu", // Optional. Replace <BOT_ID> with your bot ID which you can find in bot section of dashboard
+                        skipRouting: true,
+                    };
+                    window.Kommunicate?.updateSettings(defaultSettings);
+                    window.kommunicate?.startConversation(conversationDetail);
+                } else {
+                    window.kommunicate?.openConversation(
+                        window.conversationIds[window.currentDeal]
+                    );
+                }
+                Kommunicate?.displayKommunicateWidget(true);
+            }
+        }
+
+        // KM SCRIPT
+        (function (d, m) {
+            var kommunicateSettings = {
+                appId: "253789f2670b833362b314f6bc63d3feb",
+                popupWidget: true,
+                automaticChatOpenOnNavigation: true,
+                popupWidget: !1,
+                onInit: () => {
+                    Kommunicate?.displayKommunicateWidget(false);
+                    const closeBtn = window.KommunicateGlobal?.document.getElementById(
+                        "km-chat-widget-close-button"
+                    );
+                    closeBtn?.addEventListener("click", (event) => {
+                        Kommunicate?.displayKommunicateWidget(false);
+                    });
+                    const events = {
+                        onChatWidgetOpen: function (a) {
+                            const currentConversation = window.conversationIds ?? {};
+                            if (!currentConversation[window.currentDeal]) {
+                                window.kommunicate.openConversation(
+                                    currentConversation[window.currentDeal]
+                                );
+                            }
+                        },
+                        onMessageReceived: function (a) {
+                            window.conversationIds = {
+                                ...window.conversationIds,
+                                [window.currentDeal]:
+                                    window.KommunicateGlobal.CURRENT_GROUP_DATA.tabId,
+                            };
+                        },
+                    };
+                    window.kommunicate.subscribeToEvents(events);
+
+                   document.querySelector("#kommunicate-widget-iframe").classList.add("myHtItr")
+                },
+            };
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+
+    </script>
 </body>
+
 </html>
